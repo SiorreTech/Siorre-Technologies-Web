@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Siorre Technologies — Mobile Studio</title>
+  <meta name="description" content="Siorre Technologies | React Native ile modern iOS ve Android uygulamaları" />
+  <link rel="icon" href="assets/images/siorre.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="hdr">
+    <div class="wrap">
+      <a class="brand" href="#">
+        <img src="assets/images/siorre.png" alt="Siorre Technologies" />
+        <span>Siorre Technologies</span>
+      </a>
+      <nav>
+        <a href="#work"><span data-i18n="nav_work">Projeler</span></a>
+        <a href="#about"><span data-i18n="nav_about">Hakkımda</span></a>
+        <a class="cta" href="#contact"><span data-i18n="nav_contact">İletişim</span></a>
+
+        <button id="themeToggle" aria-label="Tema değiştir" title="Tema değiştir">🌓</button><button id="hdrCollapse" class="btn hdr-collapse" type="button" aria-expanded="false" aria-controls="hdrExtras" aria-label="Show extra actions">&lt;</button><div id="hdrExtras" class="hdr-extras"><button id="langTR" class="flag" aria-label="Türkçe" title="Türkçe">
+          <svg width="18" height="18" viewBox="0 0 640 480" aria-hidden="true">
+            <defs>
+              <clipPath id="a">
+                <path fill-opacity=".7" d="M-85.3 0h682.6v512H-85.3z" />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#a)" transform="translate(80) scale(.94)">
+              <path fill="#e30a17" d="M-128 0h768v512h-768z" />
+              <path fill="#fff" d="M283.2 256a119.6 119.6 0 1 1-238.9 0 119.6 119.6 0 0 1 238.9 0z" />
+              <path fill="#e30a17" d="M296.1 256a96 96 0 1 1-191.9 0 96 96 0 0 1 191.9 0z" />
+              <path fill="#fff" d="m351.2 205.5 46.6 49.2-68.2 22 42.2-53.6-57-39.4z" />
+            </g>
+          </svg>
+        </button>
+        <button id="langEN" class="flag" aria-label="English" title="English">
+          <svg width="18" height="18" viewBox="0 0 60 30" aria-hidden="true">
+            <clipPath id="t">
+              <path d="M0,0 v30 h60 v-30 z" />
+            </clipPath>
+            <clipPath id="s">
+              <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+            </clipPath>
+            <g clip-path="url(#t)">
+              <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#s)" />
+              <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+              <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+            </g>
+          </svg>
+        </button><a class="icon" href="https://github.com/SiorreTech" target="_blank" aria-label="GitHub" title="GitHub"
+          rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor"
+              d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 10 8 11.6.6.1.8-.3.8-.6v-2.1c-3.3.8-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.3 1.8 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.6-1.4-5.6-6.3 0-1.4.5-2.6 1.3-3.6 0-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.3a11.6 11.6 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3.6 1.6.1 2.9.1 3.2.8 1 1.3 2.2 1.3 3.6 0 4.9-2.9 6-5.6 6.3.4.3.8 1 .8 2v2.9c0 .3.2.7.8.6 4.7-1.6 8-6.2 8-11.6A12 12 0 0 0 12 .5z" />
+          </svg>
+        </a>
+        <a class="icon" href="https://x.com/SiorreT61620" target="_blank" aria-label="X" title="X" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor"
+              d="M18.244 2H21l-6.53 7.46L22 22h-6.91l-4.5-5.86L4.5 22H2l7.06-8.06L2 2h6.91l4.11 5.36L18.244 2Zm-2.42 18h1.34L8.29 4H6.95l8.87 16Z" />
+          </svg>
+        </a>
+        <a class="icon" href="https://www.instagram.com/squarepht/" target="_blank" aria-label="Instagram"
+          title="Instagram" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor"
+              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5.5 5.5 0 1 1 0 11.001 5.5 5.5 0 0 1 0-11ZM7 12a5 5 0 1 0 10.001 0A5 5 0 0 0 7 12Zm11.2-3.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z" />
+          </svg>
+        </a>
+
+        </div>
+        
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1><span data-i18n="hero_title">Mobil deneyimler <em>zahmetsiz</em> hissettirir.</span></h1>
+      <p><span data-i18n="hero_sub">React Native ile App Store ve Play Store'da ölçeklenen net, hızlı ve estetik
+          uygulamalar.</span></p>
+
+    </div>
+    <div class="hero-bg"></div>
+  </section>
+
+  <main class="wrap">
+    <section id="work" class="grid">
+      <article class="case case--wide accent-v">
+        <div class="case__bg grad-anim"></div>
+        <div class="case__bg"></div>
+        <div class="case__inner">
+          <div class="case__head">
+            <img src="assets/images/v-vehicles.png" alt="V Vehicles" class="logo" />
+            <div>
+              <h3>V Vehicles</h3>
+              <p class="muted"><span data-i18n="v_live">App Store & Play Store’da aktif</span></p>
+            </div>
+          </div>
+
+          <p class="case__desc"><span data-i18n="v_desc">GTA 5 araçlarını listeleyen, toplam maliyet hesaplayabilen ve
+              favorilerle kişiselleştirilebilen mobil uygulama.</span></p>
+          <div class="case__tags"><span>React Native</span><span>Expo</span><span>AsyncStorage</span></div>
+          <div class="case__actions">
+            <a class="btn primary" href="https://apps.apple.com/tr/app/v-vehicles/id6737740399" target="_blank"
+              rel="noopener">App Store</a>
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.siorre.gta&hl=en_US" target="_blank"
+              rel="noopener">Play Store</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case accent-m">
+        <div class="case__bg"></div>
+        <div class="case__inner">
+          <div class="case__head">
+            <img src="assets/images/moodmate.jpg" alt="Moodmate" class="logo" />
+            <div>
+              <h3>Moodmate</h3>
+              <p class="muted"><span data-i18n="m_sub">Kişisel asistan • Duygu takibi & içgörü</span></p>
+            </div>
+          </div>
+          <p class="case__desc"><span data-i18n="m_desc">Günlük ruh hali kaydı, akıllı öneriler, periyodik kişilik
+              analizi ve hatırlatıcılar. Yeni nesil minimal arayüz.</span></p>
+          <div class="case__tags"><span>React Native</span><span>AI</span><span>Offline-first</span></div>
+          <div class="case__actions"><a class="btn" href="#"><span data-i18n="soon">Yakında</span></a></div>
+        </div>
+      </article>
+
+      <article class="case accent-s">
+        <div class="case__bg"></div>
+        <div class="case__inner">
+          <div class="case__head">
+            <img src="assets/images/siorre.png" alt="Flashcards" class="logo" />
+            <div>
+              <h3>Flashcards</h3>
+              <p class="muted">A1–B2 seviye setler • Testler • İlerleme</p>
+            </div>
+          </div>
+          <p class="case__desc">İngilizce kelime öğrenimini basit, eğlenceli ve düzenli hale getiren yapı; offline
+            destekli.</p>
+          <div class="case__tags"><span>React Native</span><span>Offline</span><span>i18n</span></div>
+          <div class="case__actions"><a class="btn ghost" href="#contact"><span data-i18n="contact_quote">Teklif
+                Al</span></a></div>
+        </div>
+      </article>
+
+      <article class="case accent-q">
+        <div class="case__bg"></div>
+        <div class="case__inner">
+          <div class="case__head">
+            <img src="assets/images/squarepht.jpg" alt="square pht" class="logo" />
+            <div>
+              <h3>square pht — Photography</h3>
+              <p class="muted">Instagram portfolyo & kısa hikâyeler</p>
+            </div>
+          </div>
+          <p class="case__desc">Şehir ve portre ağırlıklı seçkiler. Minimal düzen, kare format, doğal ışık.</p>
+          <div class="case__tags"><span>Photography</span><span>Story</span><span>Color grading</span></div>
+          <div class="case__actions"><a class="btn primary" href="https://www.instagram.com/squarepht/" target="_blank"
+              rel="noopener">Instagram</a></div>
+        </div>
+      </article>
+
+      <article class="case accent-k">
+        <div class="case__bg"></div>
+        <div class="case__inner">
+          <div class="case__head">
+            <img src="assets/images/prank.png" alt="Kanka Prank Button" class="logo" />
+            <div>
+              <h3>Kanka Prank Button</h3>
+              <p class="muted">Eğlenceli sesler • Tek dokunuş</p>
+            </div>
+          </div>
+          <p class="case__desc">Arkadaş ortamını şenlendiren minimal şaka düğmesi. Hızlı erişim, favoriler, titreşim
+            geri bildirimi.</p>
+          <div class="case__tags"><span>Prank</span><span>Soundboard</span><span>Haptics</span></div>
+          <div class="case__actions">
+            <div class="case__actions"><a class="btn ghost" href="#contact">Demo İste</a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case accent-br">
+        <div class="case__bg"></div>
+        <div class="case__inner">
+          <div class="case__head">
+            <img src="assets/images/blackred.png" alt="BlackRed Elevations" class="logo" />
+            <div>
+              <h3>BlackRed Elevations</h3>
+              <p class="muted">Kırmızı & Siyah Kot • Yol Mühendisliği</p>
+            </div>
+          </div>
+          <p class="case__desc">Kırmızı kot / siyah kot hesabını hızlıca yapan, yol projelerinde metraj ve tasarım
+            kararlarını hızlandıran mühendislik aracı.</p>
+          <div class="case__tags"><span>Highway</span><span>Elevation</span><span>Calc</span></div>
+          <div class="case__actions"><a class="btn ghost" href="#contact">Demo İste</a></div>
+        </div>
+      </article>
+
+      <article class="case accent-ac">
+        <div class="case__bg"></div>
+        <div class="case__inner">
+          <div class="case__head">
+            <img src="assets/images/autocad.png" alt="AutoCAD Plugin" class="logo" />
+            <div>
+              <h3>AutoCAD C# Plugin</h3>
+              <p class="muted">Cross Sections • Elevations • Mass Diagram</p>
+            </div>
+          </div>
+          <p class="case__desc">AutoCAD için C# ile geliştirilen eklenti: boy kesit, en kesit ve kütle diyagramını tek
+            tıkla üretir; şablonlar ve katmanlarla uyumlu çalışır.</p>
+          <div class="case__tags"><span>AutoCAD</span><span>C#</span><span>CAD Automation</span></div>
+          <div class="case__actions"><a class="btn ghost" href="#contact">Demo İste</a></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="about" class="about glass">
+      <h2>Hakkımızda</h2>
+
+      <div class="about-grid">
+        <!-- Ahmet Said Acer -->
+        <article class="bio-card">
+          <h3 class="name-anim">Ahmet Said Acer</h3>
+          <p class="one">“Hızlı deney, hızlı öğren, hızlı büyüt.” Ürünü sahaya taşıyan, ayrıntıda kaybolmadan ilerler.
+          </p>
+          <div class="links">
+            <a class="icon-btn" target="_blank" rel="noopener"
+              href="https://www.linkedin.com/in/ahmet-said-acer-610659229/" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.77 2.64 4.77 6.07V21H17v-5.33c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21H9z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Ahmet Enes Gümüş -->
+        <article class="bio-card">
+          <h3 class="name-anim">Ahmet Enes Gümüş</h3>
+          <p class="one">“Basit görünür, sağlam çalışır.” Performansı ve tasarımı aynı çizgide tutar.</p>
+          <div class="links">
+            <a class="icon-btn" target="_blank" rel="noopener"
+              href="https://www.linkedin.com/in/ahmet-enes-g%C3%BCm%C3%BC%C5%9F-a34045379/" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.77 2.64 4.77 6.07V21H17v-5.33c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21H9z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Nuri Çalışkan -->
+        <article class="bio-card">
+          <h3 class="name-anim">Nuri Çalışkan</h3>
+          <p class="one">“Fikir→Prototip→Geri bildirim.” Ekibi aynı hedefe kilitleyen akıcı süreçler kurar.</p>
+          <div class="links">
+            <a class="icon-btn ghost" target="_blank" rel="noopener" href="https://x.com/SiorreT61620" aria-label="X">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M18.244 2H21l-6.53 7.46L22 22h-6.91l-4.5-5.86L4.5 22H2l7.06-8.06L2 2h6.91l4.11 5.36L18.244 2Zm-2.42 18h1.34L8.29 4H6.95l8.87 16Z" />
+              </svg>
+              <span>X</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+
+    <section id="contact" class="contact glass">
+      <h2><span data-i18n="contact_h">İletişim</span></h2>
+      <p><span data-i18n="contact_p">Projenizi kısa sürede değerlendirebilirim.</span></p>
+      <div class="contact__row">
+        <a class="btn primary" href="mailto:hello@siorre.dev"><span data-i18n="contact_mail">E-posta Gönder</span></a>
+        <a class="btn ghost" href="https://github.com/SiorreTech" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ftr">
+    <div class="wrap"><small>© <span id="yil"></span> Siorre Technologies</small></div>
+  </footer>
+
+  <script>
+    document.getElementById('yil').textContent = new Date().getFullYear();
+    const themeBtn = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) root.setAttribute('data-theme', savedTheme);
+    themeBtn.addEventListener('click', () => {
+      const cur = root.getAttribute('data-theme');
+      const next = cur === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    const STRINGS = {
+      tr: { hero_title: "Mobil deneyimler <em>zahmetsiz</em> hissettirir.", hero_sub: "React Native ile App Store ve Play Store'da ölçeklenen net, hızlı ve estetik uygulamalar.", cta_see: "Projeler", cta_start: "Proje başlat", nav_work: "Work", nav_about: "Hakkımda", nav_contact: "İletişim", v_live: "App Store & Play Store’da aktif", v_desc: "GTA 5 araçlarını listeleyen, toplam maliyet hesaplayabilen ve favorilerle kişiselleştirilebilen mobil uygulama.", m_sub: "Kişisel asistan • Duygu takibi & içgörü", m_desc: "Günlük ruh hali kaydı, akıllı öneriler, periyodik kişilik analizi ve hatırlatıcılar. Yeni nesil minimal arayüz.", s_sub: "Glass • Gradient • Motion", s_desc: "Siorre markası için şeffaf logo alanı üzerinde, soldan sağa azalan marka gradyanı. Hareketli mikro etkileşimlerle premium hissiyat.", about_h: "Hakkımda", about_p: "React Native geliştiricisiyim. Performans, sadelik ve detay odaklıyım. Şeffaf kartlar, geniş ama kontrollü gradyanlar ve okunaklı tipografi ile marka kimliğini güçlendiririm.", contact_h: "İletişim", contact_p: "Projenizi kısa sürede değerlendirebilirim.", contact_mail: "E-posta Gönder", contact_quote: "Teklif Al", soon: "Yakında" },
+      en: { hero_title: "Mobile experiences that feel <em>effortless</em>.", hero_sub: "Crisp, fast, and aesthetic apps that scale on the App Store and Play Store with React Native.", cta_see: "See work", cta_start: "Start a project", nav_work: "Work", nav_about: "About", nav_contact: "Contact", v_live: "Live on App Store & Play Store", v_desc: "A mobile app that lists GTA 5 vehicles, calculates total cost, and personalizes with favorites.", m_sub: "Personal assistant • Mood tracking & insights", m_desc: "Daily mood logs, smart suggestions, periodic personality analysis, and reminders. A new-gen minimal UI.", s_sub: "Glass • Gradient • Motion", s_desc: "For the Siorre brand: transparent logo area with a fading brand gradient. Premium feel via subtle motion.", about_h: "About", about_p: "I am a React Native developer focused on performance, simplicity, and detail. Transparent cards, wide yet controlled gradients, and readable typography strengthen brand identity.", contact_h: "Contact", contact_p: "I can evaluate your project quickly.", contact_mail: "Send Email", contact_quote: "Get a quote", soon: "Coming soon" }
+    };
+    function applyLang(lang) {
+      const dict = STRINGS[lang] || STRINGS.tr;
+      document.documentElement.lang = lang === 'en' ? 'en' : 'tr';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+      localStorage.setItem('lang', lang);
+    }
+    const pref = localStorage.getItem('lang');
+    const initial = pref ? pref : ((navigator.language || '').startsWith('tr') ? 'tr' : 'en');
+    applyLang(initial);
+    document.getElementById('langTR').addEventListener('click', () => applyLang('tr'));
+    document.getElementById('langEN').addEventListener('click', () => applyLang('en'));
+  </script>
+
+  <script>
+    // Smooth scroll behavior for hero buttons (robust to different markup)
+    (function () {
+      function goTo(selList) {
+        for (const sel of selList) {
+          const el = document.querySelector(sel);
+          if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); return true; }
+        }
+        return false;
+      }
+      function attach(btnSelList, targetSelList) {
+        for (const bs of btnSelList) {
+          const btn = document.querySelector(bs);
+          if (btn) {
+            btn.addEventListener('click', function (e) {
+              // cancel default if it's an anchor
+              if (this.tagName === 'A') e.preventDefault();
+              goTo(targetSelList);
+            });
+            return;
+          }
+        }
+      }
+      // See work → #projects or #work
+      attach(
+        ['a[href="#projects"]', 'a[href="#work"]', '.hero .btn.primary'],
+        ['#projects', '#work']
+      );
+      // Start a project → #contact
+      attach(
+        ['a[href="#contact"]', '.hero .btn.ghost'],
+        ['#contact']
+      );
+
+      // Global handler for any anchor with hash
+      document.addEventListener('click', function (e) {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          const t = document.querySelector(id);
+          if (t) {
+            e.preventDefault();
+            t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const els = Array.from(document.querySelectorAll('.grad-anim'));
+      if (!els.length) return;
+
+      const state = new Map();
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          state.set(e.target, { entry: e });
+        });
+        requestTick();
+      }, { threshold: Array.from({ length: 11 }, (_, i) => i / 10) });
+
+      els.forEach(el => io.observe(el));
+
+      let ticking = false;
+      function requestTick() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+
+      function update() {
+        ticking = false;
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        state.forEach((rec, el) => {
+          const rect = el.getBoundingClientRect();
+          const mid = rect.top + rect.height * 0.5;
+          let prog = (mid / vh);
+          prog = Math.max(0, Math.min(1, prog));
+          const pos = Math.round(prog * 100);
+          el.style.setProperty('--gpos', pos + '%');
+        });
+      }
+
+      window.addEventListener('scroll', requestTick, { passive: true });
+      window.addEventListener('resize', requestTick);
+      requestTick();
+
+      setTimeout(() => {
+        const anyHasPos = els.some(el => getComputedStyle(el).getPropertyValue('--gpos'));
+        if (!anyHasPos) els.forEach(el => el.classList.add('auto'));
+      }, 800);
+    })();
+  </script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const toggle = document.getElementById('hdrCollapse');
+  const extras = document.getElementById('hdrExtras');
+  if(!toggle || !extras) return;
+
+  function setOpen(open){
+    extras.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? '>' : '<';
+  }
+
+  // Desktop => always open; Mobile => closed by default
+  const mql = window.matchMedia('(max-width: 768px)');
+  function syncByMedia(){ setOpen(!mql.matches); }
+  mql.addEventListener ? mql.addEventListener('change', syncByMedia) : mql.addListener(syncByMedia);
+  syncByMedia();
+
+  toggle.addEventListener('click', () => {
+    setOpen(!extras.classList.contains('is-open'));
+  });
+});
+</script>
+
+</body>
+
+</html>

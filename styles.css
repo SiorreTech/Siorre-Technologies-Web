@@ -1,0 +1,786 @@
+/* Core theme */
+:root {
+  color-scheme: light dark;
+  --bg: #0b0f14;
+  --text: #e9eef3;
+  --muted: #a9b6c5;
+  --line: #1b2430;
+  --glass: rgba(255, 255, 255, .04);
+  --shadow: 0 30px 60px rgba(0, 0, 0, .35);
+  --surfaceA: #111922;
+  --surfaceB: #0d141c;
+  --v1: #f5a006;
+  --v2: #2e7b3c;
+  --m1: #7864ff;
+  --m2: #c86eff;
+  --s1: #4da3ff;
+  --s2: #d8d2b0;
+  --q1: #ff8a00;
+  --q2: #ff3d81;
+  /* SquarePht uses old Prank colors */
+  --k1: #000000;
+  --k2: #ffd700;
+  /* Prank logo-like black/yellow */
+  --br1: #e21212;
+  --br2: #0a0a0a;
+  /* BlackRed */
+  --ac1: #781414;
+  --ac2: #ac2863;
+  /* AutoCAD */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f8fb;
+    --text: #0e1116;
+    --muted: #5b6572;
+    --line: #e2e8f0;
+    --glass: rgba(255, 255, 255, .7);
+    --shadow: 0 16px 40px rgba(2, 6, 23, .08);
+    --surfaceA: #ffffff;
+    --surfaceB: #f3f6fb
+  }
+}
+
+:root[data-theme="light"] {
+  --bg: #f6f8fb;
+  --text: #0e1116;
+  --muted: #5b6572;
+  --line: #e2e8f0;
+  --glass: rgba(255, 255, 255, .7);
+  --shadow: 0 16px 40px rgba(2, 6, 23, .08);
+  --surfaceA: #ffffff;
+  --surfaceB: #f3f6fb
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b0f14;
+  --text: #e9eef3;
+  --muted: #a9b6c5;
+  --line: #1b2430;
+  --glass: rgba(255, 255, 255, .04);
+  --shadow: 0 30px 60px rgba(0, 0, 0, .35);
+  --surfaceA: #111922;
+  --surfaceB: #0d141c
+}
+
+/* Base */
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--surfaceA), var(--surfaceB))
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px
+}
+
+.muted {
+  color: var(--muted)
+}
+
+/* Header */
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(180deg, color-mix(in oklab, var(--surfaceA), transparent 20%), color-mix(in oklab, var(--surfaceB), transparent 15%) 70%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line)
+}
+
+.hdr .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .3px
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: transparent
+}
+
+.hdr nav {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.hdr nav a {
+  color: var(--text);
+  opacity: .8;
+  text-decoration: none
+}
+
+.hdr nav a:hover {
+  opacity: 1
+}
+
+.hdr nav .cta {
+  padding: 8px 12px;
+  border: 1px solid color-mix(in oklab, var(--text), transparent 75%);
+  border-radius: 10px
+}
+
+#themeToggle {
+  background: transparent;
+  border: 1px solid color-mix(in oklab, var(--text), transparent 75%);
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+  cursor: pointer
+}
+
+/* Social icons & Flags */
+.icon,
+.flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in oklab, var(--text), transparent 75%);
+  text-decoration: none;
+  color: var(--text)
+}
+
+.icon {
+  opacity: .85
+}
+
+.icon:hover {
+  opacity: 1;
+  transform: translateY(-1px)
+}
+
+.flag:hover {
+  transform: translateY(-1px)
+}
+
+.flag svg {
+  display: block
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line)
+}
+
+.hero .wrap {
+  padding: 72px 22px 54px
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 3vw + 1rem, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 12px
+}
+
+.hero h1 em {
+  background: linear-gradient(90deg, var(--s1), var(--m2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-style: normal
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 0 0 18px
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap
+}
+
+.hero-bg {
+  position: absolute;
+  inset: auto -15% -55% -15%;
+  height: 420px;
+  filter: blur(48px);
+  background: radial-gradient(60% 100% at 65% 35%, color-mix(in oklab, var(--s1) 35%, transparent), transparent 65%), radial-gradient(70% 100% at 30% 60%, color-mix(in oklab, var(--m2) 30%, transparent), transparent 70%), radial-gradient(80% 120% at 75% 80%, color-mix(in oklab, var(--v2) 25%, transparent), transparent 80%)
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklab, var(--text), transparent 80%);
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--surfaceA), transparent 5%), color-mix(in oklab, var(--surfaceB), transparent 5%))
+}
+
+.btn:hover {
+  transform: translateY(-1px)
+}
+
+.btn.primary {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--s1), var(--m2))
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--s1);
+  color: var(--s1)
+}
+
+/* Grid / Cases */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  margin: 28px 0
+}
+
+.case {
+  position: relative;
+  grid-column: span 6;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  isolation: isolate
+}
+
+.case--wide {
+  grid-column: span 12
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  object-fit: contain
+}
+
+.case__inner {
+  position: relative;
+  padding: 20px
+}
+
+.case__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px
+}
+
+.case__desc {
+  margin: 6px 0 12px;
+  color: color-mix(in oklab, var(--text), transparent 10%)
+}
+
+.case__tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 12px 0 20px
+}
+
+.case__tags span {
+  font-size: .85rem;
+  color: color-mix(in oklab, var(--text), transparent 25%);
+  border: 1px dashed color-mix(in oklab, var(--text), transparent 80%);
+  padding: 4px 10px;
+  border-radius: 999px
+}
+
+.case__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap
+}
+
+.case__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 1
+}
+
+/* Diagonal gradients */
+.accent-v .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--v1) 80%, transparent) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--v2) 65%, transparent) 10%, transparent 75%), linear-gradient(180deg, color-mix(in oklab, var(--surfaceA), transparent 0%) 0%, color-mix(in oklab, var(--surfaceB), transparent 0%) 100%)
+}
+
+.accent-m .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--m1) 80%, transparent) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--m2) 65%, transparent) 10%, transparent 75%), linear-gradient(180deg, color-mix(in oklab, var(--surfaceA), transparent 0%) 0%, color-mix(in oklab, var(--surfaceB), transparent 0%) 100%)
+}
+
+.accent-s .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--s1) 75%, transparent) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--s2) 50%, transparent) 15%, transparent 75%), linear-gradient(180deg, color-mix(in oklab, var(--surfaceA), transparent 0%) 0%, color-mix(in oklab, var(--surfaceB), transparent 0%) 100%)
+}
+
+.accent-q .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--q1) 80%, transparent) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--q2) 65%, transparent) 10%, transparent 75%), linear-gradient(180deg, color-mix(in oklab, var(--surfaceA), transparent 0%) 0%, color-mix(in oklab, var(--surfaceB), transparent 0%) 100%)
+}
+
+.accent-k .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--k1) 80%, transparent) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--k2) 65%, transparent) 10%, transparent 75%), linear-gradient(180deg, color-mix(in oklab, var(--surfaceA), transparent 0%) 0%, color-mix(in oklab, var(--surfaceB), transparent 0%) 100%)
+}
+
+.accent-br .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--br1) 85%, transparent) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--br2) 65%, transparent) 10%, transparent 75%), linear-gradient(180deg, color-mix(in oklab, var(--surfaceA), transparent 0%) 0%, color-mix(in oklab, var(--surfaceB), transparent 0%) 100%)
+}
+
+.accent-ac .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--ac1) 80%, transparent) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--ac2) 65%, transparent) 10%, transparent 75%), linear-gradient(180deg, color-mix(in oklab, var(--surfaceA), transparent 0%) 0%, color-mix(in oklab, var(--surfaceB), transparent 0%) 100%)
+}
+
+/* Light softening */
+:root[data-theme="light"] .accent-v .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--v1) 70%, white) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--v2) 70%, white) 10%, transparent 75%), linear-gradient(180deg, var(--surfaceA) 0%, var(--surfaceB) 100%)
+}
+
+:root[data-theme="light"] .accent-m .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--m1) 70%, white) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--m2) 70%, white) 10%, transparent 75%), linear-gradient(180deg, var(--surfaceA) 0%, var(--surfaceB) 100%)
+}
+
+:root[data-theme="light"] .accent-s .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--s1) 72%, white) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--s2) 72%, white) 15%, transparent 75%), linear-gradient(180deg, var(--surfaceA) 0%, var(--surfaceB) 100%)
+}
+
+:root[data-theme="light"] .accent-q .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--q1) 72%, white) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--q2) 72%, white) 10%, transparent 75%), linear-gradient(180deg, var(--surfaceA) 0%, var(--surfaceB) 100%)
+}
+
+:root[data-theme="light"] .accent-k .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--k1) 72%, white) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--k2) 72%, white) 10%, transparent 75%), linear-gradient(180deg, var(--surfaceA) 0%, var(--surfaceB) 100%)
+}
+
+:root[data-theme="light"] .accent-br .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--br1) 74%, white) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--br2) 72%, white) 10%, transparent 75%), linear-gradient(180deg, var(--surfaceA) 0%, var(--surfaceB) 100%)
+}
+
+:root[data-theme="light"] .accent-ac .case__bg {
+  background: linear-gradient(to bottom right, color-mix(in oklab, var(--ac1) 72%, white) 0%, transparent 60%), linear-gradient(to bottom right, color-mix(in oklab, var(--ac2) 72%, white) 10%, transparent 75%), linear-gradient(180deg, var(--surfaceA) 0%, var(--surfaceB) 100%)
+}
+
+/* Sections & footer */
+.about.glass,
+.contact.glass {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin: 28px 0
+}
+
+.ftr {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  padding: 22px 0;
+  text-align: center
+}
+
+/* Smooth scrolling + sticky header offset */
+html {
+  scroll-behavior: smooth;
+}
+
+#work,
+#about,
+#contact {
+  scroll-margin-top: 88px;
+}
+
+/* About grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.bio-card {
+  grid-column: span 4;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bio-card::before {
+  /* sol üst -> sağ alt hafif marka gradyanı */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+      color-mix(in oklab, var(--s1) 12%, transparent) 0%,
+      transparent 60%);
+  pointer-events: none;
+}
+
+.bio-card:hover {
+  transform: translateY(-2px);
+}
+
+.bio-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--s1), var(--m2));
+  color: #fff;
+  letter-spacing: .5px;
+}
+
+.bio-card h3 {
+  margin: 0 0 4px;
+}
+
+.tagline {
+  margin: 0;
+  color: color-mix(in oklab, var(--text), transparent 20%);
+}
+
+.bio-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn.small {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: .95rem;
+}
+
+.btn.small.ghost {
+  background: transparent;
+  color: var(--s1);
+  border: 1px solid var(--s1);
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .bio-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .bio-card {
+    grid-column: span 12;
+  }
+}
+
+/* About — startup vibe, minimal ama canlı */
+.about-grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 14px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.bio-card {
+  grid-column: span 4;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.bio-card::before {
+  /* sol üstten sağ alta çok hafif parıltı */
+  content: "";
+  position: absolute;
+  inset: -40% -40% -40% -40%;
+  background:
+    radial-gradient(60% 60% at 0% 0%, color-mix(in oklab, var(--s1) 18%, transparent), transparent 60%),
+    radial-gradient(40% 40% at 100% 100%, color-mix(in oklab, var(--m2) 14%, transparent), transparent 60%);
+  filter: blur(20px);
+  opacity: .55;
+  pointer-events: none;
+}
+
+.bio-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--s1), transparent 70%);
+}
+
+/* Animasyonlu gradient isim */
+.name-anim {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  background: linear-gradient(90deg, var(--s1), var(--m2), var(--v2));
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: nameShift 6s ease-in-out infinite;
+}
+
+@keyframes nameShift {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+/* Kısa cümle */
+.one {
+  margin: 0 0 12px;
+  color: color-mix(in oklab, var(--text), transparent 15%);
+}
+
+/* Link butonları (ikon + metin) */
+.links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.icon-btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in oklab, var(--text), transparent 78%);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+  background: linear-gradient(180deg,
+      color-mix(in oklab, var(--surfaceA), transparent 6%),
+      color-mix(in oklab, var(--surfaceB), transparent 6%));
+}
+
+.icon-btn:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in oklab, var(--s1), transparent 60%);
+}
+
+.icon-btn.ghost {
+  background: transparent;
+  color: var(--s1);
+  border-color: var(--s1);
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .bio-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .bio-card {
+    grid-column: span 12;
+  }
+}
+
+/* Scroll'a bağlı veya otomatik gradient kaydırma */
+.grad-anim {
+  background-size: 200% 100%;
+  background-position: var(--gpos, 0%) 50%;
+  transition: background-position .25s ease;
+}
+
+/* Otomatik fallback animasyon */
+@keyframes autoShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.grad-anim.auto {
+  animation: autoShift 8s ease-in-out infinite;
+}
+
+/* === Mobile full-width cards & snug edges === */
+@media (max-width: 768px) {
+  /* Kenarlardaki boşlukları azalt */
+  body { padding-left: 0 !important; padding-right: 0 !important; }
+  .wrap, .container, .content, .section, main, section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Tüm kart listelerini tek sütun yap */
+  .grid, .cases, .cards, .cards-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Her kartı tam genişlik yap */
+  .case, .card, .bio-card {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* V Vehicles gibi geniş kartların iç boşlukları tutarlı kalsın */
+  .case .case__inner, .card .card__inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+
+/* === MOBILE FIX: full-width, single-column cards + vertical layout === */
+@media (max-width: 768px) {
+  /* Kenar boşluklarını dengeli yap */
+  body { padding-left: 0 !important; padding-right: 0 !important; }
+  .wrap, .container, .content, main, section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Tüm kart listelerini tek sütun yap (hangi sınıf olursa olsun) */
+  .grid, .cases, .cards, .cards-container, .works, .showcase, .projects {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Her kart tam genişlik ve sıfır dış boşluk */
+  .case, .card, .bio-card {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* Kart iç yerleşimi dikeyleştir (solda logo/sağda içerik yapısı varsa) */
+  .case__inner, .card__inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  /* Olası yan sütunu üste al */
+  .case__side, .case__media, .case__logo {
+    order: -1 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Görseller taşmasın */
+  img, svg, video { max-width: 100% !important; height: auto !important; }
+
+  /* Başlık/etiket taşmalarını önle */
+  .case h3, .card h3 { overflow-wrap: anywhere; }
+}
+
+
+/* === Mobile: force single-column items, override grid-column spans === */
+@media (max-width: 768px) {
+  .grid, .cases, .cards, .cards-container, .works, .showcase, .projects {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .case, .case--wide, .card, .bio-card {
+    grid-column: 1 / -1 !important; /* span all columns */
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  /* stack internal layout */
+  .case__inner, .card__inner { display: block !important; }
+  .case__head { align-items: flex-start !important; }
+  .case__side, .case__media, .case__logo { order: -1 !important; margin-bottom: 10px !important; }
+}
+
+
+/* App bar extras collapse: desktop always open, mobile collapsible */
+.hdr-extras { display:flex; gap:.5rem; align-items:center; }
+.hdr-collapse { display:none; }
+
+@media (max-width: 768px){
+  .hdr-collapse{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:34px; height:34px;
+    padding:0; border-radius:8px;
+  }
+  .hdr-extras{
+    display:flex;
+    gap:.5rem;
+    overflow:hidden;
+    max-width:0;
+    opacity:0;
+    transform: translateX(4px);
+    transition: max-width .28s ease, opacity .28s ease, transform .28s ease;
+  }
+  .hdr-extras.is-open{
+    max-width:520px;
+    opacity:1;
+    transform: translateX(0);
+  }
+}
